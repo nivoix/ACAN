@@ -1,0 +1,88 @@
+.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  max-height: fit-content;
+  padding: 40px 0;
+  height: auto;
+}
+.navTags {
+  color: black;
+  padding: 5px 14px;
+  text-decoration: none;
+  border-radius: 20px;
+  &.active {
+    color: white;
+    background-color: #1d5377;
+  }
+}
+.navTags:hover {
+  color: white;
+  background-color: #a4d11d;
+}
+.navCollapse {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.navCollapse:hover .collapsTags {
+  animation: show 0.5s ease-in forwards;
+  min-height: 110px;
+}
+@keyframes show {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  99% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(70px);
+    opacity: 1;
+  }
+}
+
+.collapsTags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  left: 10px;
+  padding-top: 20px;
+  position: absolute;
+  transform: translateY(-40px);
+  opacity: 0;
+  & a {
+    color: black;
+    text-decoration: none;
+    padding: 4px;
+  }
+  & a:hover {
+    color: white;
+    background-color: #a4d11d;
+  }
+  & a.active {
+    color: white;
+    background-color: #1d5377;
+  }
+}
+
+.collapsTags:hover {
+  transform: translateY(70px);
+  opacity: 1;
+}
+
+.bannerLogo {
+  display: flex;
+  margin-inline-start: 5%;
+  margin-top: 50px;
+  position: relative;
+  height: 200px;
+  align-items: center;
+}
+
+.logo {
+  position: absolute;
+  width: 350px;
+}
