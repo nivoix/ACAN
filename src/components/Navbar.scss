@@ -6,6 +6,18 @@
   max-height: fit-content;
   padding: 40px 0;
   height: auto;
+  font-size: 24px;
+}
+.openBurger,
+.btnClose {
+  display: none;
+}
+.burgerIcon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
 }
 .navTags {
   color: black;
@@ -25,64 +37,178 @@
   position: relative;
   display: flex;
   align-items: center;
+  & .collapsTags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    left: 10px;
+    top: 32px;
+    position: absolute;
+    max-height: 0px;
+    opacity: 0;
+    z-index: 2;
+    & a {
+      display: none;
+      color: black;
+      text-decoration: none;
+      padding: 4px;
+    }
+    & a:hover {
+      color: white;
+      background-color: #a4d11d;
+    }
+    & a.active {
+      color: white;
+      background-color: #1d5377;
+    }
+  }
 }
 .navCollapse:hover .collapsTags {
-  animation: show 0.5s ease-in forwards;
-  min-height: 110px;
+  width: max-content;
+  padding-top: 10%;
+  animation: show 0.4s ease-in forwards;
+  & a {
+    display: inline;
+  }
 }
 @keyframes show {
   0% {
-    transform: translateY(-40px);
     opacity: 0;
   }
   99% {
     opacity: 0.1;
   }
   100% {
-    transform: translateY(70px);
     opacity: 1;
   }
 }
 
-.collapsTags {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  left: 10px;
-  padding-top: 20px;
-  position: absolute;
-  transform: translateY(-40px);
-  opacity: 0;
-  & a {
-    color: black;
-    text-decoration: none;
-    padding: 4px;
-  }
-  & a:hover {
-    color: white;
-    background-color: #a4d11d;
-  }
-  & a.active {
-    color: white;
-    background-color: #1d5377;
-  }
-}
-
-.collapsTags:hover {
-  transform: translateY(70px);
-  opacity: 1;
-}
-
 .bannerLogo {
   display: flex;
-  margin-inline-start: 5%;
   margin-top: 50px;
   position: relative;
   height: 200px;
   align-items: center;
+  background-color: #c0c3c5;
+  padding-inline-start: 3%;
+  & .logo {
+    position: absolute;
+    width: 350px;
+    top: -58px;
+  }
+  & h1 {
+    color: #464b4e;
+    font-weight: 900;
+    font-size: 50px;
+    margin-inline-start: 1%;
+  }
 }
 
-.logo {
-  position: absolute;
-  width: 350px;
+@media (max-width: 1024px) {
+  .navbar {
+    justify-content: flex-end;
+    gap: 2%;
+    font-size: 18px;
+    margin-right: 2%;
+  }
+  .navCollapse:hover .collapsTags a {
+    width: 180px;
+  }
+  .bannerLogo {
+    padding-inline-start: 1%;
+    & h1 {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+    right: -136px;
+    z-index: 1;
+    box-shadow:
+      rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  .btnClose.active {
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    cursor: pointer;
+  }
+  .navbar.active {
+    right: 15px;
+    padding: 0;
+    margin: 40px 5px 40px 0;
+    width: 125px;
+    padding: 10px;
+  }
+  .openBurger {
+    display: flex;
+    margin-inline-end: 15px;
+    justify-content: flex-end;
+    padding-top: 15px;
+    cursor: pointer;
+  }
+  .openBurger.hide {
+    visibility: hidden;
+  }
+  .bannerLogo.center {
+    justify-content: center;
+    & h1 {
+      margin-inline-start: 0;
+    }
+  }
+  .bannerLogo .logo {
+    width: 318px;
+    top: -53px;
+  }
+  .bannerLogo h1 {
+    width: 150px;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 32px;
+  }
+  .navCollapse:hover .collapsTags {
+    padding-top: 0;
+    flex-direction: column;
+    left: -140px;
+    top: 0px;
+  }
+  .navCollapse:hover .collapsTags a {
+    text-align: start;
+    width: 135px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    font-size: 14px;
+  }
+  .navbar.active {
+    width: 90px;
+  }
+  .bannerLogo .logo {
+    width: 200px;
+    top: -33px;
+  }
+  .navCollapse:hover .collapsTags a {
+    width: 100px;
+  }
+  .navCollapse:hover .collapsTags {
+    left: -115px;
+  }
+}
+@media (max-width: 425px) {
+  .openBurger.hide {
+    height: 230px;
+  }
+  .bannerLogo {
+    justify-content: center;
+  }
 }
