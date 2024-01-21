@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import logo from "../assets/logo.png";
+import ecophyto from "../assets/ecophyto.png";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -69,7 +70,24 @@ const Navbar = () => {
       </div>
       <div className={`bannerLogo ${visible ? "" : "center"}`}>
         <img src={logo} alt="logo ACAN" className="logo"></img>
-        <h1>Nuisibles & Propreté</h1>
+        <div className={` bannerTitle ${visible ? "left" : ""}`}>
+          <h1>Nuisibles & Propreté</h1>
+          <img src={ecophyto} alt="label écophyto 2018" className="ecophyto" />
+        </div>
+      </div>
+      <div className="bannerSlogan">
+        <h2 className="slogan">
+          La solution nettoyage & régulation de nuisibles dans les Ardennes
+        </h2>
+        <div
+          className="phone"
+          itemScope
+          itemType="https://schema.org/LocalBusiness"
+        >
+          <span className="phoneNumber" itemProp="telephone">
+            <a href="tel:+33324375814">03.24.37.58.14</a>
+          </span>
+        </div>
       </div>
     </>
   );

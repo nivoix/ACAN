@@ -44,7 +44,8 @@
     left: 10px;
     top: 32px;
     position: absolute;
-    max-height: 0px;
+    //max-height: 0px;
+    height: max-content;
     opacity: 0;
     z-index: 2;
     & a {
@@ -82,15 +83,14 @@
     opacity: 1;
   }
 }
-
 .bannerLogo {
   display: flex;
-  margin-top: 50px;
+  margin-top: 30px;
   position: relative;
-  height: 200px;
+  height: auto;
   align-items: center;
   background-color: #c0c3c5;
-  padding-inline-start: 3%;
+  justify-content: space-between;
   & .logo {
     position: absolute;
     width: 350px;
@@ -100,10 +100,52 @@
     color: #464b4e;
     font-weight: 900;
     font-size: 50px;
-    margin-inline-start: 1%;
+    width: 73%;
   }
 }
-
+.bannerTitle {
+  margin: 40px 0 20px 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.ecophyto {
+  margin-top: 32px;
+  width: 200px;
+  height: 90px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.bannerSlogan {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  padding-top: 20px;
+}
+.slogan {
+  font-size: 22px;
+  width: 73%;
+}
+.phone {
+  background-color: #01b1af;
+  text-align: center;
+  width: 200px;
+  height: 30px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  &:hover {
+    background-color: #a4d11d;
+  }
+}
+.phoneNumber {
+  a {
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+    vertical-align: -webkit-baseline-middle;
+    font-size: 20px;
+  }
+}
 @media (max-width: 1024px) {
   .navbar {
     justify-content: flex-end;
@@ -114,14 +156,14 @@
   .navCollapse:hover .collapsTags a {
     width: 180px;
   }
-  .bannerLogo {
-    padding-inline-start: 1%;
-    & h1 {
-      font-size: 32px;
-    }
+  .bannerLogo h1 {
+    font-size: 32px;
+    width: 60%;
+  }
+  .slogan {
+    width: 60%;
   }
 }
-
 @media (max-width: 768px) {
   .navbar {
     position: fixed;
@@ -130,6 +172,7 @@
     font-size: 16px;
     right: -136px;
     z-index: 1;
+    background-color: white;
     box-shadow:
       rgba(0, 0, 0, 0.4) 0px 2px 4px,
       rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
@@ -161,29 +204,49 @@
   }
   .bannerLogo.center {
     justify-content: center;
-    & h1 {
-      margin-inline-start: 0;
-    }
   }
   .bannerLogo .logo {
     width: 318px;
     top: -53px;
   }
   .bannerLogo h1 {
-    width: 150px;
+    width: 52%;
     font-size: 26px;
     text-align: center;
     margin-top: 32px;
+  }
+  .bannerTitle {
+    flex-direction: column;
+    &.left {
+      width: max-content;
+      align-items: center;
+      margin-inline: 42px;
+    }
   }
   .navCollapse:hover .collapsTags {
     padding-top: 0;
     flex-direction: column;
     left: -140px;
     top: 0px;
+    z-index: -1;
+    background-color: white;
+    box-shadow:
+      rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   }
   .navCollapse:hover .collapsTags a {
     text-align: start;
     width: 135px;
+  }
+  .bannerSlogan {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .slogan {
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
   }
 }
 @media (max-width: 600px) {
@@ -194,8 +257,8 @@
     width: 90px;
   }
   .bannerLogo .logo {
-    width: 200px;
-    top: -33px;
+    width: 250px;
+    top: -42px;
   }
   .navCollapse:hover .collapsTags a {
     width: 100px;
@@ -203,12 +266,38 @@
   .navCollapse:hover .collapsTags {
     left: -115px;
   }
-}
-@media (max-width: 425px) {
-  .openBurger.hide {
-    height: 230px;
-  }
   .bannerLogo {
     justify-content: center;
+  }
+  .bannerLogo h1 {
+    width: 63%;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .bannerTitle.left {
+    width: 100%;
+    margin: 16px 30px;
+    align-items: center;
+  }
+  .ecophyto {
+    margin-top: 16px;
+    width: 100px;
+    height: 45px;
+  }
+}
+@media (max-width: 425px) {
+  .bannerLogo {
+    justify-content: center;
+  }
+  .bannerTitle.left {
+    align-items: center;
+  }
+  .bannerLogo h1 {
+    width: 100%;
+  }
+  .slogan {
+    width: 98%;
+    text-align: center;
+    font-size: 16px;
   }
 }
