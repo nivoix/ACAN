@@ -1,0 +1,35 @@
+//colors
+
+// H1-color dark grey
+$H1-grey-color: #464b4e;
+// background and text black
+$black-color: #000;
+//text white
+$white-color: #ffffff;
+//background-color white
+$background-color-white: #ffffff;
+// background-color light grey
+$primary-color: #d4d6d7;
+// background-color  dark grey
+$secondary-color: #c0c3c5;
+// background-color  buttonNav and card blue
+$tertiary-color: #1d5377;
+// background-color button hover green
+$quaternary-color: #a4d11d;
+// background-color phoneCard
+$phoneCard-color: #01b1af;
+
+// Breakpoints
+$screen-desktop: 1024px;
+$screen-tablet: 768px;
+$screen-mobile: 425px;
+
+//margin
+$margin-screen-tablet: 0 20px;
+
+//box-shadow
+$box-shadowCard: rgb(38, 57, 77) 0px 20px 30px -10px;
+$box-shadowNav:
+  rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;

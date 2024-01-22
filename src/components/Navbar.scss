@@ -1,3 +1,5 @@
+@import "../style/variables.scss";
+
 .navbar {
   display: flex;
   flex-wrap: nowrap;
@@ -16,22 +18,24 @@
   display: block;
   width: 35px;
   height: 5px;
-  background-color: black;
+  background-color: $black-color;
   margin: 6px 0;
 }
 .navTags {
-  color: black;
+  color: $black-color;
   padding: 5px 14px;
   text-decoration: none;
   border-radius: 20px;
   &.active {
-    color: white;
-    background-color: #1d5377;
+    color: $white-color;
+    background-color: $tertiary-color;
+    box-shadow: $box-shadowCard;
   }
 }
 .navTags:hover {
-  color: white;
-  background-color: #a4d11d;
+  color: $white-color;
+  background-color: $quaternary-color;
+  box-shadow: $box-shadowCard;
 }
 .navCollapse {
   position: relative;
@@ -44,23 +48,22 @@
     left: 10px;
     top: 32px;
     position: absolute;
-    //max-height: 0px;
     height: max-content;
     opacity: 0;
     z-index: 2;
     & a {
       display: none;
-      color: black;
+      color: $black-color;
       text-decoration: none;
       padding: 4px;
     }
     & a:hover {
-      color: white;
-      background-color: #a4d11d;
+      color: $white-color;
+      background-color: $quaternary-color;
     }
     & a.active {
-      color: white;
-      background-color: #1d5377;
+      color: $white-color;
+      background-color: $tertiary-color;
     }
   }
 }
@@ -89,7 +92,7 @@
   position: relative;
   height: auto;
   align-items: center;
-  background-color: #c0c3c5;
+  background-color: $secondary-color;
   justify-content: space-between;
   & .logo {
     position: absolute;
@@ -97,7 +100,7 @@
     top: -58px;
   }
   & h1 {
-    color: #464b4e;
+    color: $H1-grey-color;
     font-weight: 900;
     font-size: 50px;
     width: 73%;
@@ -114,7 +117,7 @@
   margin-top: 32px;
   width: 200px;
   height: 90px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: $box-shadowCard;
 }
 .bannerSlogan {
   display: flex;
@@ -128,25 +131,25 @@
   width: 73%;
 }
 .phone {
-  background-color: #01b1af;
+  background-color: $phoneCard-color;
   text-align: center;
   width: 200px;
   height: 30px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: $box-shadowCard;
   &:hover {
-    background-color: #a4d11d;
+    background-color: $quaternary-color;
   }
 }
 .phoneNumber {
   a {
     font-weight: 900;
-    color: white;
+    color: $white-color;
     text-decoration: none;
     vertical-align: -webkit-baseline-middle;
     font-size: 20px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: $screen-desktop) {
   .navbar {
     justify-content: flex-end;
     gap: 2%;
@@ -164,7 +167,7 @@
     width: 60%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: $screen-tablet) {
   .navbar {
     position: fixed;
     flex-direction: column;
@@ -172,11 +175,8 @@
     font-size: 16px;
     right: -136px;
     z-index: 1;
-    background-color: white;
-    box-shadow:
-      rgba(0, 0, 0, 0.4) 0px 2px 4px,
-      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color: $background-color-white;
+    box-shadow: $box-shadowNav;
   }
   .btnClose.active {
     display: block;
@@ -229,11 +229,8 @@
     left: -140px;
     top: 0px;
     z-index: -1;
-    background-color: white;
-    box-shadow:
-      rgba(0, 0, 0, 0.4) 0px 2px 4px,
-      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color: $background-color-white;
+    box-shadow: $box-shadowNav;
   }
   .navCollapse:hover .collapsTags a {
     text-align: start;
@@ -285,7 +282,7 @@
     height: 45px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: $screen-mobile) {
   .bannerLogo {
     justify-content: center;
   }
